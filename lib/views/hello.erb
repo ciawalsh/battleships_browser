@@ -1,5 +1,5 @@
 <div>
-		<% if @name %>
+		<% if @name && !@name.empty? %>
 			Thank you <%= @name %>, you are now registered!
 		<% else %>
 			<form action ="/hello">

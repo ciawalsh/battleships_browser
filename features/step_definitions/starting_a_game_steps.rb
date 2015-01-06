@@ -4,12 +4,8 @@ When(/^I enter my name "(.*?)"$/) do |name|
 
 end
 
-# When(/^I don't fill in the form$/) do
-  
-# 	expect­().to have_c­ont­ent­('')
+When(/^I don't fill my name$/) do
 
-# end
+  fill_in('name', with: '')
 
-# Then(/^the error message "(.*?)"$/) do |arg1|
-#   pending # express the regexp above with the code you wish you had
-# end
+end

@@ -14,5 +14,6 @@ Feature: Starting the game
 
 	Scenario: Missed Name
 		Given I am on the hello page
-		When I don't fill in the form
-		Then the error message "Please fill in your name"
+		When I don't fill my name
+		Then I press "submit"
+		Then I should see "What's your name?"
