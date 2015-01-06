@@ -9,9 +9,8 @@ class Battleships < Sinatra::Base
   end
 
   get '/hello' do
-
+  	@name = params[:name]
   	erb :hello
-
   end
 
   # start the server if ruby file executed directly

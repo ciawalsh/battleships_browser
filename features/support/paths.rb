@@ -13,6 +13,9 @@ module NavigationHelpers
     when /the home\s?page/
       '/'
 
+    when /the hello\s?page/
+      '/hello'
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
