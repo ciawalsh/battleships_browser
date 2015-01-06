@@ -10,6 +10,7 @@ class Battleships < Sinatra::Base
 
   get '/hello' do
   	@name = params[:name]
+  	@namep2 = params[:namep2]
   	erb :hello
   end
 

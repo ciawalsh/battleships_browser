@@ -1,11 +1,25 @@
 <div>
+
 		<% if @name && !@name.empty? %>
 			Thank you <%= @name %>, you are now registered!
 		<% else %>
 			<form action ="/hello">
-				What's your name?
+				What's Player 1's name?
 				<input type="text" name="name">
+				<input type="hidden" name="namep2" value="<%= params[:namep2] %>">
 				<input type="submit" value="submit">
 			</form>
 		<% end %>
+
+		<% if @namep2 && !@namep2.empty? %>
+			Thank you <%= @namep2 %>, you are now registered!
+		<% else %>
+			<form action ="/hello">
+				What's Player 2's name?
+				<input type="text" name="namep2">
+				<input type="hidden" name="name" value="<%= params[:name] %>">
+				<input type="submit" value="submitp2">
+			</form>
+		<% end %>
+
 </div>
