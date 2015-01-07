@@ -2,29 +2,43 @@
 
 	<h1>BATTLESHIPS BOARD</h1>
 
-	<form action ="/single_game">
-    
-    <table border="1" style="width:1%">
-    	<tr>
-    		<th></th>
-    		<th>A</th>
-    		<th>B</th>
-    	</tr>
+  	<form action ="/single_game">
+      
+      <table border="1" style="width:1%">
+      	<tr>
+      		<th></th>
+      		<th>A</th>
+      		<th>B</th>
+      	</tr>
 
-    	<tr>
-    		<th>1</th>
-    		<td><input type="button" value="FIRE"></td>
-    		<td><input type="button" value="FIRE"></td>
-    	</tr>
-    	<tr>
-    		<th>2</th>
-    		<td><input type="button" value="FIRE"></td>
-    		<td><input type="button" value="FIRE"></td>
-    	</tr>
-		</table>
+      	<tr>
+      		<th>1</th>
+      		<td>
+            <input type="hidden" name="shoot" value="0">
+            <input type="submit" value="FIRE1">
+          </td>
+      		<td>
+            <input type="hidden" name="shoot" value="0">
+            <input type="submit" value="FIRE2">
+          </td>
+      	</tr>
+      	<tr>
+      		<th>2</th>
+      		<td>
+            <input type="hidden" name="shoot" value="0">
+            <input type="submit" value="FIRE3">
+          </td>
+      		<td>
+            <input type="hidden" name="shoot" value="0">
+            <input type="submit" value="FIRE4">
+          </td>
+      	</tr>
+  		</table>
 
-	</form>
-
-
+  <% if @name == "0" %>
+    Missed!
+  <% else %>
+    Please press a fire
+  <% end %>
 
 </div>

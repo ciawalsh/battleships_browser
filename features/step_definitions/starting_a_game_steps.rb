@@ -37,3 +37,7 @@ When(/^I enter my coordinate "(.*?)"$/) do |ship|
 	fill_in('ship', with: 'A1')
 
 end
+
+Then(/^I should see 'Missed!'$/) do
+  expect(page).to have_content('Missed!')
+end

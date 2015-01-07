@@ -23,8 +23,10 @@ class Battleships < Sinatra::Base
   end
 
   get '/single_game' do
+    @name = params[:shoot]
   	erb :single_game
   end
+
 
   # start the server if ruby file executed directly
   run! if app_file == $0

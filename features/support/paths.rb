@@ -22,6 +22,9 @@ module NavigationHelpers
     when /the single\s?player\s?page/
       '/single_player'
 
+    when /the single\s?game\s?page/
+      '/single_game'
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

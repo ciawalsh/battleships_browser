@@ -35,10 +35,15 @@ Feature: Starting the game
 		Then I press "place"
 		Then I should see "Ship has been placed"
 
-	Scenario: Playing a single player game
+	Scenario: Starting a single player game
 		Given I am on the single player page
 		And I enter my name "Charlie"
 		And I press "submit"
 		When I follow "Start Game"
 		Then I should see "BATTLESHIPS BOARD"
+
+	Scenario: Single player shooting and missing
+    Given I am on the single game page
+    And I press "FIRE2"
+    Then I should see 'Missed!'
 
