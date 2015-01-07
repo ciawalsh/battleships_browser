@@ -1,0 +1,14 @@
+<div>		
+
+	<% if @name && !@name.empty? %>
+		Thank you <%= @name %>, you are now registered!
+		<a href = "/single_game">Start Game</a>
+	<% else %>
+		<form action ="/single_player">
+			What's your name?
+			<input type="text" name="name">
+			<input type="submit" value="submit">
+		</form>
+	<% end %>
+
+</div>

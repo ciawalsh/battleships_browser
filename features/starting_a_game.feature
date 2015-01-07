@@ -6,18 +6,18 @@ Feature: Starting the game
 	Scenario: Registering the first player
 		Given I am on the homepage
 		When I follow "New Game"
-		Then I should see "What's Player 1's name?"
+		Then I should see "What's your name?"
 		When I enter my name "Charlie"
 		Then I press "submit"
 		Then I should see "Thank you Charlie, you are now registered!"
 
-	Scenario: Registering the second player
-		Given I am on the homepage
-		When I follow "New Game"
-		Then I should see "What's Player 2's name?"
-		When I enter my namep2 "Bibiana"
-		Then I press "submitp2"
-		Then I should see "What's Player 1's name? Thank you Bibiana, you are now registered!"
+	#Scenario: Registering the second player
+		#Given I am on the homepage
+		#When I follow "New Game"
+		#Then I should see "What's Player 2's name?"
+		#When I enter my namep2 "Bibiana"
+		#Then I press "submitp2"
+		#Then I should see "What's Player 1's name? #Thank you Bibiana, you are now registered!"
 
 	Scenario: Missed Name
 		Given I am on the hello page
@@ -34,3 +34,11 @@ Feature: Starting the game
 		When I enter my coordinate "A1"
 		Then I press "place"
 		Then I should see "Ship has been placed"
+
+	Scenario: Playing a single player game
+		Given I am on the single player page
+		And I enter my name "Charlie"
+		And I press "submit"
+		When I follow "Start Game"
+		Then I should see "BATTLESHIPS BOARD"
+
