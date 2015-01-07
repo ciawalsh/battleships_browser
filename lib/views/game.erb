@@ -1,0 +1,13 @@
+<div>
+
+	<% if @ship && !@ship.empty? %>
+		Ship has been placed
+	<% else %>
+		<form action ="/game">
+      Where do you want to place your first ship?
+			<input type="text" name="ship">
+			<input type="submit" value="place">
+		</form>
+	<% end %>
+
+</div>

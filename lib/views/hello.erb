@@ -2,6 +2,7 @@
 
 		<% if @name && !@name.empty? %>
 			Thank you <%= @name %>, you are now registered!
+			<a href = "/game">Start Game</a>
 		<% else %>
 			<form action ="/hello">
 				What's Player 1's name?

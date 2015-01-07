@@ -24,3 +24,13 @@ Feature: Starting the game
 		When I don't fill my name
 		Then I press "submit"
 		Then I should see "What's Player 1's name? What's Player 2's name?"
+
+	Scenario: Placing the ships
+		Given I am on the hello page
+		And I fill in "name" and "namep2"
+		And I press "submit" and "submitp2"
+		When I follow "Start Game"
+		Then I should see "Where do you want to place your first ship?"
+		When I enter my coordinate "A1"
+		Then I press "place"
+		Then I should see "Ship has been placed"
