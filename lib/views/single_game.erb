@@ -2,8 +2,6 @@
 
 	<h1>BATTLESHIPS BOARD</h1>
 
-  	<form action ="/single_game">
-      
       <table border="1" style="width:1%">
       	<tr>
       		<th></th>
@@ -13,32 +11,34 @@
 
       	<tr>
       		<th>1</th>
-      		<td>
+      		<td><form action ="/single_game">
             <input type="hidden" name="shoot" value="0">
             <input type="submit" value="FIRE1">
-          </td>
-      		<td>
+          </form></td>
+      		<td><form action ="/single_game">
             <input type="hidden" name="shoot" value="0">
             <input type="submit" value="FIRE2">
-          </td>
+          </form></td>
       	</tr>
       	<tr>
       		<th>2</th>
-      		<td>
+      		<td><form action ="/single_game">
             <input type="hidden" name="shoot" value="0">
             <input type="submit" value="FIRE3">
-          </td>
-      		<td>
-            <input type="hidden" name="shoot" value="0">
+          </form></td>
+      		<td><form action ="/single_game">
+            <input type="hidden" name="shoot" value="1">
             <input type="submit" value="FIRE4">
-          </td>
+          </form></td>
       	</tr>
   		</table>
 
   <% if @name == "0" %>
     Missed!
+  <% elsif @name == "1" %>
+    Hit!  
   <% else %>
-    Please press a fire
+    Please press a fire....
   <% end %>
 
 </div>

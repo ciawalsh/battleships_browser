@@ -41,3 +41,7 @@ end
 Then(/^I should see 'Missed!'$/) do
   expect(page).to have_content('Missed!')
 end
+
+Then(/^I should see 'Hit!'$/) do
+  expect(page).to have_content('Hit!')
+end
