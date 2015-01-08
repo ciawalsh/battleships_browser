@@ -1,7 +1,7 @@
 <div>		
 
-	<% if @name && !@name.empty? %>
-		Thank you <%= @name %>, you are now registered!
+	<% if @player.name && !@player.name.empty? %>
+		Thank you <%= @player.name %>, you are now registered!
 		<a href = "/single_game">Start Game</a>
 	<% else %>
 		<form action ="/single_player">

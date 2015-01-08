@@ -1,6 +1,14 @@
 require 'sinatra/base'
+require './lib/water'
+require './lib/ship'
+require './lib/player'
+require './lib/game'
+require './lib/cell'
+require './lib/board'
 
 class Battleships < Sinatra::Base
+
+  game = Game.new
   
   get '/' do
   	erb :index
@@ -18,7 +26,9 @@ class Battleships < Sinatra::Base
   end
 
   get '/single_player' do
-  	@name = params[:name]
+    @player = Player.new
+  	@player.name = params[:name]
+    game.player1 = @player
   	erb :single_player
   end
 
