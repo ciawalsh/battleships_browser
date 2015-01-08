@@ -1,44 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
 <div>	
 
-	<h1>BATTLESHIPS BOARD</h1>
+	<h5> <img style="height:75px; length:350px" src="/images/Battleship_Logo.jpg"/> </h5>
 
-      <table border="1" style="width:1%">
-      	<tr>
-      		<th></th>
-      		<th>A</th>
-      		<th>B</th>
-      	</tr>
+    <form action ="/single_game" method="post">
+      Where do you want to place your first ship?
+      <input type="text" name="ship">
+      <input type="submit" value="place">
+    </form>
 
-      	<tr>
-      		<th>1</th>
-      		<td><form action ="/single_game">
-            <input type="hidden" name="shoot" value="0">
-            <input type="submit" value="FIRE1">
-          </form></td>
-      		<td><form action ="/single_game">
-            <input type="hidden" name="shoot" value="0">
-            <input type="submit" value="FIRE2">
-          </form></td>
-      	</tr>
-      	<tr>
-      		<th>2</th>
-      		<td><form action ="/single_game">
-            <input type="hidden" name="shoot" value="0">
-            <input type="submit" value="FIRE3">
-          </form></td>
-      		<td><form action ="/single_game">
-            <input type="hidden" name="shoot" value="1">
-            <input type="submit" value="FIRE4">
-          </form></td>
-      	</tr>
-  		</table>
 
-  <% if @name == "0" %>
-    Missed!
-  <% elsif @name == "1" %>
-    Hit!  
-  <% else %>
-    Please press a fire....
-  <% end %>
+    <table style="width: 50%">
+      <% @keys.each_slice(10) do |slice| %>
+        <tr>
+          <% slice.each do |key| %>
+          <td>
+            <form action="/single_game" method="post">
+              <input style="background:blue; color:red" type="submit" id="<%= key.to_s %>" value="<%= key.to_s %>" name="coord" style="width: 50%">
+            </form>
+          </td>
+          <%end%>
+        </tr>
+      <%end%>
+    </table>
+
+    <% if @push_coord %>
+      You MISSED!
+    <% elsif @push_coord && @ships == true %>
+      HIT!
+    <% end %>
+  
 
 </div>
+
+</html>

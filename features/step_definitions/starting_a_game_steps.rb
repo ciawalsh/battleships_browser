@@ -38,8 +38,8 @@ When(/^I enter my coordinate "(.*?)"$/) do |ship|
 
 end
 
-Then(/^I should see 'Missed!'$/) do
-  expect(page).to have_content('Missed!')
+Then(/^I should see 'You MISSED!'$/) do
+  expect(page).to have_content('You MISSED!')
 end
 
 Then(/^I should see 'Hit!'$/) do

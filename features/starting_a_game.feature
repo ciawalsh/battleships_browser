@@ -40,12 +40,12 @@ Feature: Starting the game
 		And I enter my name "Charlie"
 		And I press "submit"
 		When I follow "Start Game"
-		Then I should see "BATTLESHIPS BOARD"
+		Then I should see "Where do you want to place your first ship?"
 
 	Scenario: Single player shooting and missing
     Given I am on the single game page
-    And I press "FIRE2"
-    Then I should see 'Missed!'
+    And I press "A1"
+    Then I should see 'You MISSED!'
 
   Scenario: Single Player shooting and hitting
   	Given I am on the single game page
