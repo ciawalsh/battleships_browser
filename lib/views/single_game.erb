@@ -6,9 +6,10 @@
 
 	<h5> <img style="height:75px; length:350px" src="/images/Battleship_Logo.jpg"/> </h5>
 
-    <form action ="/single_game" method="post">
+    <form action ="/place_ship" method="post">
       Where do you want to place your first ship?
-      <input type="text" name="ship">
+      <input type="text" name="coordinate" placeholder="eg A1">
+      <input type="text" name="direction" placeholder="eg vertical">
       <input type="submit" value="place">
     </form>
 
@@ -27,10 +28,8 @@
       <%end%>
     </table>
 
-    <% if @push_coord %>
-      You MISSED!
-    <% elsif @push_coord && @ships == true %>
-      HIT!
+    <% if @message %>
+      <%= @message %>
     <% end %>
   
 
