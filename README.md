@@ -1,4 +1,6 @@
-#Playing Battleships in the browser
+# Playing Battleships in the browser
+
+### Makers Academy Week 3 Project
 
 The game is ready to play when theres are two players initialized with a board each and each board has 5 ships placed. 
 
@@ -8,11 +10,7 @@ A game_setup.rb file has been added which sets up the game to a ready state plac
 
 In this project we will be implementing the game in the browser
 
-## Context
-
-Week 3 project at Makers Academy
-
-## Resources
+## Technologies Used
 
 - Sinatra
 - Cucumber
