@@ -12,12 +12,11 @@ In this project we will be implementing the game in the browser
 
 ## Technologies Used
 
+- Ruby
 - Sinatra
 - Cucumber
-- Ruby
-- Bundle
-- IRB
-- GitHub
+- HTML
+- CSS
 
 ## Paired With:
 
