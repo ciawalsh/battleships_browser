@@ -45,10 +45,11 @@ Feature: Starting the game
 	Scenario: Single player shooting and missing
     Given I am on the single game page
     And I press "A1"
-    Then I should see 'You MISSED!'
+    Then I should see 'You missed'
 
   Scenario: Single Player shooting and hitting
   	Given I am on the single game page
-    And I press "FIRE4"
+  	Then I place a ship in "A2" and "vertical"
+    When I press "A2"
     Then I should see 'Hit!'
 

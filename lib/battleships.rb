@@ -9,9 +9,9 @@ require './lib/board'
 class Battleships < Sinatra::Base
 
   game = Game.new
-  board = Board.new(Cell)
+  BOARD = Board.new(Cell)
   ship = Ship.destroyer
-	board.grid.each {|coord, cell| cell.content = Water.new }
+	BOARD.grid.each {|coord, cell| cell.content = Water.new }
 
 	enable :sessions
 
@@ -38,23 +38,33 @@ class Battleships < Sinatra::Base
   end
 
   get '/single_game' do
-  		@keys = board.grid.keys
-  		erb :single_game
+  	@keys = BOARD.grid.keys
+  	erb :single_game
+  end
+
+  post '/place_ship' do
+    puts params
+    BOARD.place(ship, params[:coordinate].to_sym, params[:direction].to_sym)
+    p BOARD.grid[params[:coordinate].to_sym]
+    p BOARD.grid[params[:coordinate].to_sym].content
+
+    @message = "Ship placed"
+    @keys = BOARD.grid.keys
+
+    erb :single_game
   end
 
   post '/single_game' do
-  	@keys = board.grid.keys
+  	@keys = BOARD.grid.keys
   	@push_coord = params[:coord]
   	
-  	if @push_coord
-      board.shoot_at(@push_coord.to_sym)
-    elsif params[:ship]
-    	board.place(ship, params[:ship].to_sym, :horizontally)
-  	end
+    BOARD.shoot_at(@push_coord.to_sym)
+    @message = BOARD.grid[@push_coord.to_sym].hit? && (BOARD.grid[@push_coord.to_sym].content.is_a?(Ship)) ? "Hit!" : "You missed"
+    p BOARD.grid[@push_coord.to_sym]
+    p BOARD.grid[@push_coord.to_sym].content
+    puts @push_coord
+  	@ships = BOARD.floating_ships?
 
-  	@ships = board.floating_ships?
-
-  	puts board.inspect
   	erb :single_game
   end
 
