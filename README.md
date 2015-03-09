@@ -21,8 +21,7 @@ Week 3 project at Makers Academy
 - IRB
 - GitHub
 
-## Contributors
+## Paired With:
 
-- Charlie Walsh
-- Bibiana Cristòfol
+- [Bibiana Cristòfol](https://github.com/BibianaC)
 	
